@@ -187,9 +187,9 @@ const RCon = function (_CONFIG) {
                     reject('failed to append to responseBuffer: ' + e);
                 }
                 // start timeout
-                msgTimeout = setTimeout(() => {
+                /* msgTimeout = setTimeout(() => {
                     connection.close();
-                }, timeoutMilliSecs);
+                }, timeoutMilliSecs); */
             }
 
             /**
@@ -230,10 +230,10 @@ const RCon = function (_CONFIG) {
             }
 
             // setup check for timeout
-            connectTimeout = setTimeout(() => {
+            /* connectTimeout = setTimeout(() => {
                 connection.close();
                 reject('connection.send TIMEOUT');
-            }, timeoutMilliSecs);
+            }, timeoutMilliSecs); */
 
             // and finally send the command
             connection.send(buffer, 0, buffer.length, CONFIG.port, CONFIG.address, onSend);
